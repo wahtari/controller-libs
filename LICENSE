@@ -1,21 +1,89 @@
-MIT License
+This license is available in both English and German. Find the German version below.
 
-Copyright (c) 2021 Wahtari
+English:
+WAHTARI LICENCE AGREEMENT
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+IMPORTANT - read carefully
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE DOWNLOADING OR USING THE SOFTWARE. 
+By downloading or using the Software, YOU AGREE TO BE BOUND BY THE CONTENTS OF THIS AGREEMENT.
+If YOU DO NOT AGREE TO THE CONTENTS OF THIS AGREEMENT, DO NOT DOWNLOAD SOFTWARE FROM THIS WEBSITE.
+THIS LICENSE AGREEMENT ("AGREEMENT") IS A LEGAL SETTLEMENT BETWEEN WAHTARI GmbH ("Wahtari") and the users of the software products provided ("SOFTWARE"). 
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. THIRD PARTY SOFTWARE. Not withstanding this Agreement, all or a portion of the SOFTWARE that is not Wahtari-owned software provided under an open source license by a third party ("Third Party Software") will be made available to you pursuant to the terms and conditions of the license agreement underlying the Third Party Software. 
+The use of such Third Party Software is entirely subject to the terms of this Licence. You can find the terms under "LICENSE-deps". 
+Wahtari software contains some open source software source code that can be used and modified by anyone, provided that you in turn make it available to everyone else with the same licence agreement.
+
+2. GRANT OF LICENSE. You are granted a personal, non-exclusive, non-transferable right to use the Wahtari SOFTWARE upon your acceptance of and compliance with all of the terms and conditions of this Agreement.
+
+3. PERMITTED software use. You may install and use the SOFTWARE indefinitely. The SOFTWARE may only be used to operate Wahtari products.
+
+4. TRANSFER. Except as expressly permitted in this Section 4, you may not rent, lease, sublicense or loan the SOFTWARE or any portion thereof. You may transfer the SOFTWARE, in whole or in part (individual files, e.g. DLLs, etc.), to another entity or person, provided that the transferee accepts the terms of this AGREEMENT.
+
+5.1 RESTRICTIONS. You may copy or use the SOFTWARE only as provided in this Agreement. You may not remove any proprietary notices or labels on the SOFTWARE; all copies made in compliance with this Agreement must include all copyright and other proprietary notices that exist on and in the SOFTWARE.
+
+5.2 RESTRICTION ON REVERSE ENGINEERING. Except as provided in this Agreement, you may not modify, adapt, reverse engineer, decompile or dissemble the SOFTWARE or otherwise attempt to discover the source code or algorithms contained in the SOFTWARE or create derivative works based on the SOFTWARE.
+
+6. PROPRIETARY RIGHTS. All intellectual property rights in the SOFTWARE are owned by Wahtari or its suppliers and are protected by copyright laws and international copyright treaties. Product identification, copyright notices or proprietary restrictions may not be removed from the SOFTWARE.
+
+
+7.1 LIABILITY (GERMANY). 
+
+a) Wahtari shall be liable without limitation for intent and gross negligence.
+
+b) Wahtari is liable for ordinary negligence - except in the case of injury to life, body or health - only if material contractual obligations (cardinal obligations) are breached. Liability shall be limited to the foreseeable damage typical for the contract.
+
+c) Liability for indirect and unforeseeable damage, loss of production and use, loss of profit, loss of savings and financial loss due to claims by third parties is excluded in the case of simple negligence, except in the case of injury to life, limb or health.
+
+d) Any further liability other than that stipulated in this contract is excluded, irrespective of the legal nature of the asserted claim. The foregoing limitations or exclusions of liability shall not, however, apply to any strict liability prescribed by law (e.g. under the Product Liability Act) or to liability under a strict warranty.
+
+e) Insofar as liability is excluded or limited pursuant to clauses b and c, this shall also apply to the personal liability of Wahtari's employees, workers, representatives, bodies and vicarious agents.
+
+f) Some states/jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you.
+
+7.2 LIABILITY (INTERNATIONAL). TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WAHTARI AND ITS SUPPLIERS PROVIDE THE SOFTWARE "AS IS" AND WITH ALL FAULTS and hereby also excludes for all other jurisdictions any and all claims for arbitration to the extent permitted by the respective laws.
+In particular, Wahtari HEREBY DISCLAIMS ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE AND NON-INFRINGEMENT, ANY IMPLIED WARRANTIES, DUTIES OR CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE, AND OF LACK OF VIRUSES ALL WITH REGARD TO THE SOFTWARE.
+
+
+8. APPLICABLE LAW AND JURISDICTION. This Agreement is made and construed in accordance with German law. The Amtsgericht (local court) of Munich shall have jurisdiction over any dispute between the parties arising out of this Agreement. The failure of either party to enforce any provision of this Agreement shall not be deemed a waiver of any future right to enforce that or any other provision.
+
+9. GENERAL. This Agreement is the complete and exclusive statement of the agreement between the parties and supersedes all prior agreements and communications with respect to the subject matter hereof. This Agreement shall be binding upon and inure to the benefit of the parties and their respective successors and assigns and may be modified only by an instrument signed by both parties. If any provision of this Agreement is held to be invalid, the offending clause shall be modified so as to be enforceable and shall be fully enforced as modified. In such event, the remainder of this Agreement shall remain in full force and effect.
+
+
+
+Deutsch:
+WAHTARI LIZENZVERTRAG
+WICHTIG – sorgfältig lesen
+Nehmen SIE DIESE VEREINBARUNG BITTE SORGFÄLTIG zur Kenntnis, BEVOR SIE Software herunterladen oder verwenden. 
+Indem Sie die Software herunterladen oder verwenden ERKLÄREN SIE SICH MIT DEM Inhalt DIESER VEREINBARUNG EINVERSTANDEN UND sind AN DIESE VEREINBARUNG GEBUNDEN.
+Stimmen SIE dem Inhalt DIESER VEREINBARUNG NICHT zu,  LADEN SIE KEINE SOFTWARE VON DIESER WEBSITE HERUNTER.
+DIESER LIZENZVERTRAG ("VERTRAG") IST EINE RECHTLICHE EINIGUNG ZWISCHEN DER WAHTARI GmbH ("Wahtari") und den Nutzern der zur Verfügung gestellten Softwareprodukte ("SOFTWARE"). 
+
+1. SOFTWARE VON DRITTANBIETERN. Ungeachtet dieses Vertrages wird Ihnen die gesamte oder ein Teil der SOFTWARE, die nicht im Eigentum der Wahtari befindliche Software darstellt, die unter einer Open-Source-Lizenz von Dritten zur Verfügung gestellt wird ("Software von Drittanbietern"), gemäß den Bedingungen Bestandteil des Lizenzvertrags, der der Software der Drittanbieter  zugrundeliegt. 
+Die Nutzung solcher Software von Drittanbietern unterliegt vollständig den Vereinbarungen dieser Lizenz. Sie finden die Bedingungen unter "LICENSE-deps". 
+Wahtari-Software enthält einige Open-Source-Software-Quellcodes, die von jedermann verwendet und verändert werden können, sofern Sie ihn ihrerseits allen anderen mit demselben Lizenzvertrag zur Verfügung stellen.
+
+2. LIZENZGEWÄHRUNG. Ihnen wird ein persönliches, nicht ausschließliches, nicht übertragbares Nutzungsrecht an der SOFTWARE von Wahtari eingeräumt, wenn Sie alle Bedingungen dieses Vertrages akzeptieren und einhalten.
+3. ZULÄSSIGE Softwarenutzung. Sie dürfen die SOFTWARE unbegrenzt installieren und nutzen. Die SOFTWARE darf ausschließlich zum Betrieb von Wahtari Produkten genutzt werden.
+
+4. ÜBERTRAGUNG. Sofern es Ihnen in diesem Abschnitt 4 nicht ausdrücklich gestattet wird, dürfen Sie die SOFTWARE oder Teile davon nicht vermieten, leasen, unterlizenzieren oder verleihen. Sie dürfen die SOFTWARE ganz oder in Teilen (einzelne Dateien, z. B. DLLs usw.) an eine andere juristische oder natürliche Person weitergeben, sofern der Übernehmer die Bedingungen dieser VEREINBARUNG akzeptiert.
+5.1 EINSCHRÄNKUNGEN. Sie dürfen die SOFTWARE ausschließlich wie in dieser Vereinbarung bestimmt kopieren oder verwenden. Sie dürfen keine Eigentumshinweise oder Etiketten auf der SOFTWARE entfernen; Alle Kopien, die bei Einhaltung dieser Vereinbarung entstehen, müssen sämtliche Urheberrechts- und sonstigen Eigentumshinweise enthalten, die auf und in der SOFTWARE bestehen.
+5.2 EINSCHRÄNKUNG DES REVERSE ENGINEERING. Sofern es nicht in dieser Vereinbarung vorgesehen ist, darf die SOFTWARE nicht modifiziert, angepasst, zurückentwickelt, dekompiliert oder dissambeliert werden oder auf sonstige Weise versucht werden, den in der Software enthaltenen Quellcode oder dessen Algorithmen aufzudecken  oder von ihr abgeleitete Werke zu erarbeiten.
+6. EIGENTUMSRECHTE. Alle geistigen Eigentumsrechte an der SOFTWARE sind Eigentum von Wahtari oder seinen Lieferanten und sind durch Urheberrechtsgesetze und internationale Urheberrechtsverträge geschützt. Produktkennzeichnung, Urheberrechtshinweise oder Eigentumsbeschränkungen dürfen von der SOFTWARE nicht entfernt werden.
+_____
+7.1 HAFTUNG (Deutschland). 
+a) Wahtari haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit.
+b) Für einfache Fahrlässigkeit haftet Wahtari–außer im Falle der Verletzung des Lebens, des Körpers oder der Gesundheit – nur, sofern wesentliche Vertragspflichten (Kardinalpflichten) verletzt werden. Die Haftung ist begrenzt auf den vertragstypischen und vorhersehbaren Schaden.
+c) Die Haftung für mittelbare und unvorhersehbare Schäden, Produktions-und Nutzungsausfall, entgangenen Gewinn, ausgebliebene Einsparungen und Vermögensschäden wegen Ansprüchen Dritter, ist im Falle einfacher Fahrlässigkeit –außer im Falle der Verletzung des Lebens, des Körpers oder der Gesundheit –ausgeschlossen. 
+d) Eine weitergehende Haftung als in diesem Vertrag ist – ohne Rücksicht auf die Rechtsnatur des geltend gemachten Anspruchs – ausgeschlossen. Vorstehende Haftungsbeschränkungen bzw. -ausschlüsse gelten jedoch nicht für eine gesetzlich zwingend vorgeschriebene verschuldensunabhängige Haftung (z. B. gemäß Produkthaftungsgesetz) oder die Haftung aus einer verschuldensunabhängigen Garantie. 
+e) Soweit die Haftung nach Ziffern b und c ausgeschlossen oder beschränkt ist, gilt dies auch für die persönliche Haftung der Angestellten, Arbeitnehmer, Vertreter, Organe und Erfüllungsgehilfen von Wahtari.
+f) In einigen Staaten/Gerichtsbarkeiten ist der Ausschluss oder die Einschränkung von zufälligen oder Folgeschäden nicht zulässig, sodass die oben genannte Einschränkung oder der Ausschluss möglicherweise nicht auf Sie zutrifft.
+
+7.2 HAFTUNG (INTERNATIONAL)
+WAHTARI UND SEINE LIEFERANTEN STELLEN DIE SOFTWARE "WIE BESEHEN" UND MIT ALLEN bekannten oder unbekannten MÄNGELN ZUR VERFÜGUNG und schließen hiermit auch für alle anderen Gerichtsbarkeiten jegliche Ansprüche auf Schadenersatz aus, soweit dies nach den jeweiligen Gesetzen zulässig ist.
+Insbesondere wird DIE SOFTWARE in diesem Falle OHNE MÄNGELGEWÄHR ZUR VERFÜGUNG GESTELLT, OHNE AUSDRÜCKLICHE ODER STILLSCHWEIGENDE GEWÄHRLEISTUNG JEGLICHER ART
+STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF DIE GARANTIE DER MARKTGÄNGIGKEIT,
+EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND NICHTVERLETZUNG VON RECHTEN. IN KEINEM FALL SIND DIE AUTOREN ODER URHEBERRECHTSINHABER FÜR etwaige ANSPRÜCHE, SCHÄDEN ODER ANDERE SCHÄDEN ODER SONSTIGE HAFTUNG, OB AUS VERTRAG, UNERLAUBTER HANDLUNG ODER ANDERWEITIG, DIE AUS ODER IN VERBINDUNG MIT DER SOFTWARE ODER DER NUTZUNG ODER DEM SONSTIGEN UMGANG MIT DER SOFTWARE entstehen, verantwortlich.
+
+8. ANWENDBARES RECHT UND GERICHTSSTAND. Dieser Vertrag wird in Übereinstimmung mit deutschem Recht geschlossen und ausgelegt. Für alle Auseinandersetzungen zwischen den Parteien aus diesem Vertrag ist das Amtsgericht München zuständig. Das Versäumnis einer der Parteien, eine Bestimmung dieses Vertrages geltend zu machen, gilt nicht als Verzicht auf die künftige Geltendmachung dieser oder einer anderen Bestimmung.  
+9. ALLGEMEINES. Dieser Vertrag ist die vollständige und ausschließliche Erklärung der Vereinbarung zwischen den Parteien und ersetzt alle vorherigen Vereinbarungen und Mitteilungen in Bezug auf den Gegenstand. Dieser Vertrag ist für die Parteien und ihre jeweiligen Rechtsnachfolger und Abtretungsempfänger bindend,  gilt zu ihren Gunsten und kann nur durch ein von beiden Parteien unterzeichnetes Schriftstück geändert werden. Sollte eine Bestimmung dieses Vertrages als ungültig erachtet werden, wird die zuwiderhandelnde Klausel so geändert, dass sie durchsetzbar ist, und wird, wie geändert, vollständig durchgesetzt. In diesem Fall bleibt der Rest dieses Vertrages in vollem Umfang in Kraft und wirksam.
