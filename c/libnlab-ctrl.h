@@ -1,3 +1,10 @@
+/*
+ * controller-libs
+ * Copyright (c) 2021 Wahtari GmbH
+ *
+ * All source code in this file is subject to the included LICENSE file.
+ */
+
 #ifndef NLAB_CTRL_LIB_H
 #define NLAB_CTRL_LIB_H
 
@@ -135,7 +142,7 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 /* Start of preamble from import "C" comments.  */
 
 
-#line 3 "lib.go"
+#line 8 "lib.go"
 
 #line 1 "cgo-generated-wrapper"
 

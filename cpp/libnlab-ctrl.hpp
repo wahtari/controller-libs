@@ -1,3 +1,10 @@
+/*
+ * controller-libs
+ * Copyright (c) 2021 Wahtari GmbH
+ *
+ * All source code in this file is subject to the included LICENSE file.
+ */
+
 #ifndef NLAB_CTRL_LIB_HPP
 #define NLAB_CTRL_LIB_HPP
 

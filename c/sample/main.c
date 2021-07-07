@@ -1,3 +1,10 @@
+/*
+ * controller-libs
+ * Copyright (c) 2021 Wahtari GmbH
+ *
+ * All source code in this file is subject to the included LICENSE file.
+ */
+
 #include <libnlab-ctrl.h>
 
 void print_step_motor(nlab_ctrl_step_motor* sm) {
