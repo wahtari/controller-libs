@@ -25,7 +25,11 @@ void printSwitch(Switch sw) {
     printf("{id: %s, name: %s, on: %d}", sw.id.c_str(), sw.name.c_str(), sw.on);
 }
 
-void showSingleStepMotor(Controller::Ptr ctrl, const string& id) {
+void printGPIOPin(GPIOPin gp) {
+    printf("{id: %s, name: %s, on: %d, direction: %d}", gp.id.c_str(), gp.name.c_str(), gp.on, gp.direction);
+}
+
+void showAndModifySingleStepMotor(Controller::Ptr ctrl, const string& id) {
     StepMotor sm = ctrl->getStepMotor(id);
     cout << endl << "first step motor: ";
     printStepMotor(sm);
@@ -36,7 +40,7 @@ void showSingleStepMotor(Controller::Ptr ctrl, const string& id) {
     cout << "set rel pos to " << to_string(v) << endl << endl;
 }
 
-void showSingleLED(Controller::Ptr ctrl, const string& id) {
+void showAndModifySingleLED(Controller::Ptr ctrl, const string& id) {
     LED led = ctrl->getLED(id);
     cout << endl << "first led: ";
     printLED(led);
@@ -57,7 +61,7 @@ void showSingleLED(Controller::Ptr ctrl, const string& id) {
     cout << "set led strobe delay to " << to_string(v) << endl << endl;
 }
 
-void showSingleSwitch(Controller::Ptr ctrl, const string& id) {
+void showAndModifySingleSwitch(Controller::Ptr ctrl, const string& id) {
     Switch sw = ctrl->getSwitch(id);
     cout << endl << "first switch: ";
     printSwitch(sw);
@@ -67,10 +71,29 @@ void showSingleSwitch(Controller::Ptr ctrl, const string& id) {
     cout << "set switch to " << to_string(!sw.on) << endl << endl;
 }
 
+void showAndModifySingleGPIOPin(Controller::Ptr ctrl, const string& id) {
+    GPIOPin gp = ctrl->getGPIOPin(id);
+    cout << endl << "first gpioPin: ";
+    printGPIOPin(gp);
+    cout << endl;
+
+    ctrl->setGPIOPin(id, !gp.on);
+    cout << "set gpioPin to " << to_string(!gp.on) << endl << endl;
+}
+
 int main() {
+    Controller::Ptr ctrl;
     try {
+        // Get a the list of available controllers.
+        // Note that dummy controllers are not part included in that.
+        vector<Info> infoList = Controller::list();
+        cout << "found " << to_string(infoList.size()) << " real controller(s), but using dummy now" << endl;
+
         // Open the controller.
-        Controller::Ptr ctrl = Controller::open("dummy", "dummy", {.stateDir = "/tmp/nlab-ctrl-state"});
+        ctrl = Controller::open("dummy", "dummy", {.stateDir = "/tmp/nlab-ctrl-state"});
+
+        // Activate the status LED, while sample is running.
+        ctrl->setStatusLED(ON);
 
         // Retrieve all its step motors.
         vector<StepMotor> stepMotors = ctrl->getStepMotors();
@@ -83,7 +106,7 @@ int main() {
 
         // Get a single step motor and show all its functions.
         if (stepMotors.size() > 0) {
-            showSingleStepMotor(ctrl, stepMotors[0].id);
+            showAndModifySingleStepMotor(ctrl, stepMotors[0].id);
         }
 
         // Retrieve all its leds.
@@ -97,7 +120,7 @@ int main() {
 
         // Get a single led and show all its functions.
         if (leds.size() > 0) {
-            showSingleLED(ctrl, leds[0].id);
+            showAndModifySingleLED(ctrl, leds[0].id);
         }
 
         // Retrieve all its switches.
@@ -111,7 +134,21 @@ int main() {
 
         // Get a single switch and show all its functions.
         if (switches.size() > 0) {
-            showSingleSwitch(ctrl, switches[0].id);
+            showAndModifySingleSwitch(ctrl, switches[0].id);
+        }
+
+        // Retrieve all its gpio pins.
+        vector<GPIOPin> gpioPins = ctrl->getGPIOPins();
+        cout << "found " << to_string(gpioPins.size()) << " gpioPin(s):" << endl;
+        for (const auto gp : gpioPins) {
+            cout << " - ";
+            printGPIOPin(gp);
+            cout << endl;
+        }
+
+        // Get a single gpioPin and show all its functions.
+        if (gpioPins.size() > 0) {
+            showAndModifySingleGPIOPin(ctrl, gpioPins[0].id);
         }
 
         // Retrieve the temperature.
@@ -131,6 +168,15 @@ int main() {
     } catch (Exception& e) {
         cout << "exception! code: " << to_string(e.code()) << ", message: " << e.what() << endl;
         return 1;
+    }
+
+    if (ctrl != nullptr) {
+        try {
+            ctrl->setStatusLED(OFF);
+        } catch (Exception& e) {
+            cout << "exception status led off! code: " << to_string(e.code()) << ", message: " << e.what() << endl;
+            return 2;
+        }
     }
     
     return 0;

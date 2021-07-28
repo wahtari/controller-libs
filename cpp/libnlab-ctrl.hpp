@@ -42,6 +42,12 @@ class Exception : public std::exception {
 //### Types ###//
 //#############//
 
+struct Info {
+    std::string backendID;
+    std::string id;
+    std::string devPath;
+};
+
 enum StatusLEDState {
     OFF      = 0,
     ON       = 1,
@@ -71,6 +77,19 @@ struct Switch {
     bool        on;
 };
 
+enum GPIOPinDirection {
+    IN  = 0,
+    OUT = 1,
+    IO  = 2
+};
+
+struct GPIOPin {
+    std::string      id;
+    std::string      name;
+    GPIOPinDirection direction;
+    bool             on;
+};
+
 //##################//
 //### Controller ###//
 //##################//
@@ -82,6 +101,8 @@ struct ControllerOpts {
 class Controller {
     public:
         typedef std::shared_ptr<Controller> Ptr;
+
+        static std::vector<Info> list();
 
         static Ptr open(const std::string& backendID, const std::string& devPath, const ControllerOpts& opts);
 
@@ -104,7 +125,16 @@ class Controller {
         virtual Switch              getSwitch(const std::string& id) = 0;
         virtual void                setSwitch(const std::string& id, bool on) = 0;
 
+        virtual void                 enableGPIOPins() = 0;
+        virtual void                 disableGPIOPins() = 0;
+        virtual bool                 gpioPinsEnabled() = 0;
+        virtual std::vector<GPIOPin> getGPIOPins() = 0;
+        virtual GPIOPin              getGPIOPin(const std::string& id) = 0;
+        virtual void                 setGPIOPin(const std::string& id, bool on) = 0;
+
         virtual float temperature() = 0;
+
+        virtual void powerReset() = 0;
 
         virtual void close() noexcept = 0;
 };
