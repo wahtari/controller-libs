@@ -27,8 +27,8 @@ typedef const char const_char;
 
 /// \brief Status code of an nlab_ctrl_error.
 typedef enum {
-    NLAB_CTRL_OK, ///< Operation was successful.
-    NLAB_CTRL_ERR, ///< Some unknown error occurred.
+    NLAB_CTRL_OK,           ///< Operation was successful.
+    NLAB_CTRL_ERR,          ///< Some unknown error occurred.
     NLAB_CTRL_ERR_NOT_FOUND ///< Some resource could not be found.
 } nlab_ctrl_error_code;
 
@@ -38,13 +38,10 @@ typedef enum {
 /// A call was only successful, if the code is set to ::NLAB_CTRL_OK.
 ///
 /// Errors should be created with nlab_ctrl_error_new() and eventually freed with nlab_ctrl_error_free(). \n
-/// See also: nlab_ctrl_error_set(), nlab_ctrl_error_clear().
+/// \sa nlab_ctrl_error_set, nlab_ctrl_error_clear.
 typedef struct {
-    /// \brief Indicates the result of an operation.
-    nlab_ctrl_error_code code;
-
-    /// \brief Human-readable description of the error, if code is not ::NLAB_CTRL_OK.
-    char* msg;
+    nlab_ctrl_error_code code; ///< Indicates the result of an operation.
+    char* msg;                 ///< Human-readable description of the error, if code is not ::NLAB_CTRL_OK.
 } nlab_ctrl_error;
 
 /// \brief Creates a new error.
@@ -54,22 +51,32 @@ typedef struct {
 nlab_ctrl_error* nlab_ctrl_error_new();
 
 /// \brief Set error properties.
+///
+/// \param[in,out]  err   The error.
+/// \param[in]      code  The code that should be set.
+/// \param[in]      msg   The msg that should be set.
 void nlab_ctrl_error_set(nlab_ctrl_error* err, nlab_ctrl_error_code code, char* msg);
 
 /// \brief Prints the error.
 ///
 /// Prints a formatted string to stdout with a trailing newline.
+///
+/// \param[in]  err   The error.
 void nlab_ctrl_error_print(nlab_ctrl_error* err);
 
 /// \brief Clears the error.
 ///
 /// Sets the code to ::NLAB_CTRL_OK and frees msg, if set.
+///
+/// \param[in,out]  err   The error.
 void nlab_ctrl_error_clear(nlab_ctrl_error* err);
 
 /// \brief Frees the error.
 ///
 /// Must be called eventually for every error created with nlab_ctrl_error_new(). \n
 /// Do not use err further afterwards.
+///
+/// \param[in,out]  err   The error.
 void nlab_ctrl_error_free(nlab_ctrl_error* err);
 
 //############//
@@ -80,14 +87,9 @@ void nlab_ctrl_error_free(nlab_ctrl_error* err);
 ///
 /// Contains all information about a controller necessary to identify and open it.
 typedef struct {
-    /// \brief The id of the backend compatible with this controller.
-    char* backend_id;
-
-    /// \brief The unique id of the controller itself.
-    char* id;
-
-    /// \brief The device path on the host system of the controller.
-    char* dev_path;
+    char* backend_id; ///< The id of the backend compatible with this controller.
+    char* id;         ///< The unique id of the controller itself.
+    char* dev_path;   ///< The device path on the host system of the controller.
 } nlab_ctrl_info;
 
 /// \brief A list of nlab_ctrl_info.
@@ -98,11 +100,16 @@ typedef struct {
 typedef nlab_ctrl_info** nlab_ctrl_info_list;
 
 /// \brief Returns the number of elements in the list.
+///
+/// \param[in]  infl   The info list.
 int nlab_ctrl_info_list_size(nlab_ctrl_info_list infl);
 
 /// \brief Retrieves element at the given index.
 ///
 /// Safely accesses the nlab_ctrl_info at the specified index of the given nlab_ctrl_info_list.
+///
+/// \param[in]  infl   The info list.
+/// \param[in]  index  The index into infl.
 ///
 /// \return A pointer to the nlab_ctrl_info, or NULL, if the index was out of bounds.
 nlab_ctrl_info* nlab_ctrl_info_list_at_index(nlab_ctrl_info_list infl, int index);
@@ -110,9 +117,13 @@ nlab_ctrl_info* nlab_ctrl_info_list_at_index(nlab_ctrl_info_list infl, int index
 /// \brief Frees the list.
 ///
 /// Calls nlab_ctrl_info_free() on every element of the list, and in the end frees the list itself.
+///
+/// \param[in,out]  infl   The info list.
 void nlab_ctrl_info_list_free(nlab_ctrl_info_list infl);
 
 /// \brief Frees the nlab_ctrl_info.
+///
+/// \param[in,out]  inf   The info struct.
 void nlab_ctrl_info_free(nlab_ctrl_info* inf);
 
 /// \brief Options for a controller.
@@ -141,20 +152,11 @@ typedef struct {
 
 /// \brief Represents a single step motor of the controller.
 typedef struct {
-    /// \brief A unique identifier.
-    char* id;
-
-    /// \brief A human-readable identifier.
-    char* name;
-
-    /// \brief The current step position of the step motor.
-    int step;
-
-    /// \brief The minimum step position of the step motor.
-    int min_step;
-
-    /// \brief The maximum step position of the step motor.
-    int max_step;
+    char* id;     ///< A unique identifier.
+    char* name;   ///< A human-readable identifier.
+    int step;     ///< The current step position of the step motor.
+    int min_step; ///< The minimum step position of the step motor.
+    int max_step; ///< The maximum step position of the step motor.
 } nlab_ctrl_step_motor;
 
 /// \brief A list of nlab_ctrl_step_motor.
@@ -165,11 +167,16 @@ typedef struct {
 typedef nlab_ctrl_step_motor** nlab_ctrl_step_motors;
 
 /// \brief Returns the number of elements in the list.
+///
+/// \param[in]  sms  The step motor list.
 int nlab_ctrl_step_motors_size(nlab_ctrl_step_motors sms);
 
 /// \brief Retrieves element at the given index.
 ///
 /// Safely accesses the nlab_ctrl_step_motor at the specified index of the given nlab_ctrl_step_motors.
+///
+/// \param[in]  sms    The step motor list.
+/// \param[in]  index  The index into sms.
 ///
 /// \return A pointer to the nlab_ctrl_step_motor, or NULL, if the index was out of bounds.
 nlab_ctrl_step_motor* nlab_ctrl_step_motors_at_index(nlab_ctrl_step_motors sms, int index);
@@ -177,9 +184,13 @@ nlab_ctrl_step_motor* nlab_ctrl_step_motors_at_index(nlab_ctrl_step_motors sms, 
 /// \brief Frees the list.
 ///
 /// Calls nlab_ctrl_step_motor_free() on every element of the list, and in the end frees the list itself.
+///
+/// \param[in,out]  sms  The step motor list.
 void nlab_ctrl_step_motors_free(nlab_ctrl_step_motors sms);
 
 /// \brief Frees the nlab_ctrl_step_motor.
+///
+/// \param[in,out]  sm  The step motor struct.
 void nlab_ctrl_step_motor_free(nlab_ctrl_step_motor* sm);
 
 //###########//
@@ -188,30 +199,19 @@ void nlab_ctrl_step_motor_free(nlab_ctrl_step_motor* sm);
 
 /// \brief The state of the status led.
 typedef enum {
-    NLAB_CTRL_STATUS_LED_OFF, ///< The status led is switched off.
-    NLAB_CTRL_STATUS_LED_ON,  ///< The status led is switched on.
+    NLAB_CTRL_STATUS_LED_OFF,      ///< The status led is switched off.
+    NLAB_CTRL_STATUS_LED_ON,       ///< The status led is switched on.
     NLAB_CTRL_STATUS_LED_BLINKING  ///< The status led is switched on and blinks.
 } nlab_ctrl_status_led_state;
 
 /// \brief Represents a single led of the controller.
 typedef struct {
-    /// \brief A unique identifier.
-    char* id;
-
-    /// \brief A human-readable identifier.
-    char* name;
-
-    /// \brief The current state of the led.
-    bool  on;
-
-    /// \brief The current brightness of the led.
-    int   brightness;
-
-    /// \brief A flag whether strobe is active.
-    bool  strobe_on;
-
-    /// \brief The current delay of the strobe in milliseconds.
-    int   strobe_delay;
+    char* id;           ///< A unique identifier.
+    char* name;         ///< A human-readable identifier.
+    bool  on;           ///< The current state of the led.
+    int   brightness;   ///< The current brightness of the led.
+    bool  strobe_on;    ///< A flag whether strobe is active.
+    int   strobe_delay; ///< The current delay of the strobe in milliseconds.
 } nlab_ctrl_led;
 
 /// \brief A list of nlab_ctrl_led.
@@ -222,11 +222,16 @@ typedef struct {
 typedef nlab_ctrl_led** nlab_ctrl_leds;
 
 /// \brief Returns the number of elements in the list.
+///
+/// \param[in]  leds  The led list.
 int nlab_ctrl_leds_size(nlab_ctrl_leds leds);
 
 /// \brief Retrieves element at the given index.
 ///
 /// Safely accesses the nlab_ctrl_led at the specified index of the given nlab_ctrl_leds.
+///
+/// \param[in]  leds   The led list.
+/// \param[in]  index  The index into leds.
 ///
 /// \return A pointer to the nlab_ctrl_led, or NULL, if the index was out of bounds.
 nlab_ctrl_led* nlab_ctrl_leds_at_index(nlab_ctrl_leds leds, int index);
@@ -234,9 +239,13 @@ nlab_ctrl_led* nlab_ctrl_leds_at_index(nlab_ctrl_leds leds, int index);
 /// \brief Frees the list.
 ///
 /// Calls nlab_ctrl_led_free() on every element of the list, and in the end frees the list itself.
+///
+/// \param[in,out]  leds  The led list.
 void nlab_ctrl_leds_free(nlab_ctrl_leds leds);
 
 /// \brief Frees the nlab_ctrl_led.
+///
+/// \param[in,out]  led  The led struct.
 void nlab_ctrl_led_free(nlab_ctrl_led* led);
 
 //##############//
@@ -245,14 +254,9 @@ void nlab_ctrl_led_free(nlab_ctrl_led* led);
 
 /// \brief Represents a single switch of the controller.
 typedef struct {
-    /// \brief A unique identifier.
-    char* id;
-
-    /// \brief A human-readable identifier.
-    char* name;
-
-    /// \brief The current state of the switch.
-    bool  on;
+    char* id;   ///< A unique identifier.
+    char* name; ///< A human-readable identifier.
+    bool  on;   ///< The current state of the switch.
 } nlab_ctrl_switch;
 
 /// \brief A list of nlab_ctrl_switch.
@@ -263,11 +267,16 @@ typedef struct {
 typedef nlab_ctrl_switch** nlab_ctrl_switches;
 
 /// \brief Returns the number of elements in the list.
+///
+/// \param[in]  sws  The switch list.
 int nlab_ctrl_switches_size(nlab_ctrl_switches sws);
 
 /// \brief Retrieves element at the given index.
 ///
 /// Safely accesses the nlab_ctrl_switch at the specified index of the given nlab_ctrl_switches.
+///
+/// \param[in]  sws    The switch list.
+/// \param[in]  index  The index into sws.
 ///
 /// \return A pointer to the nlab_ctrl_switch, or NULL, if the index was out of bounds.
 nlab_ctrl_switch* nlab_ctrl_switches_at_index(nlab_ctrl_switches sws, int index);
@@ -275,9 +284,13 @@ nlab_ctrl_switch* nlab_ctrl_switches_at_index(nlab_ctrl_switches sws, int index)
 /// \brief Frees the list.
 ///
 /// Calls nlab_ctrl_switch_free() on every element of the list, and in the end frees the list itself.
+///
+/// \param[in,out]  sws  The switch list.
 void nlab_ctrl_switches_free(nlab_ctrl_switches sws);
 
 /// \brief Frees the nlab_ctrl_switch.
+///
+/// \param[in,out]  sw  The switch struct.
 void nlab_ctrl_switch_free(nlab_ctrl_switch* sw);
 
 //################//
@@ -286,24 +299,17 @@ void nlab_ctrl_switch_free(nlab_ctrl_switch* sw);
 
 /// \brief The direction of a gpio pin.
 typedef enum {
-    NLAB_CTRL_GPIO_PIN_DIRECTION_IN, ///< Input pin (read-only).
+    NLAB_CTRL_GPIO_PIN_DIRECTION_IN,  ///< Input pin (read-only).
     NLAB_CTRL_GPIO_PIN_DIRECTION_OUT, ///< Output pin (writable).
-    NLAB_CTRL_GPIO_PIN_DIRECTION_IO ///< Input/Output pin (read-write).
+    NLAB_CTRL_GPIO_PIN_DIRECTION_IO   ///< Input/Output pin (read-write).
 } nlab_ctrl_gpio_pin_direction;
 
 /// \brief Represents a single gpio pin of the controller.
 typedef struct {
-    /// \brief A unique identifier.
-    char* id;
-
-    /// \brief A human-readable identifier.
-    char* name;
-
-    /// \brief The direction of the gpio pin.
-    nlab_ctrl_gpio_pin_direction direction;
-
-    // The current state of the gpio pin.
-    bool on;
+    char* id;                               ///< A unique identifier.
+    char* name;                             ///< A human-readable identifier.
+    nlab_ctrl_gpio_pin_direction direction; ///< The direction of the gpio pin.
+    bool on;                                ///< The current state of the gpio pin.
 } nlab_ctrl_gpio_pin;
 
 /// \brief A list of nlab_ctrl_gpio_pin.
@@ -314,11 +320,16 @@ typedef struct {
 typedef nlab_ctrl_gpio_pin** nlab_ctrl_gpio_pins;
 
 /// \brief Returns the number of elements in the list.
+///
+/// \param[in]  gps  The gpio pin list.
 int nlab_ctrl_gpio_pins_size(nlab_ctrl_gpio_pins gps);
 
 /// \brief Retrieves element at the given index.
 ///
 /// Safely accesses the nlab_ctrl_gpio_pin at the specified index of the given nlab_ctrl_gpio_pins.
+///
+/// \param[in]  gps    The gpio pin list.
+/// \param[in]  index  The index into gps.
 ///
 /// \return A pointer to the nlab_ctrl_gpio_pin, or NULL, if the index was out of bounds.
 nlab_ctrl_gpio_pin* nlab_ctrl_gpio_pins_at_index(nlab_ctrl_gpio_pins gps, int index);
@@ -326,9 +337,13 @@ nlab_ctrl_gpio_pin* nlab_ctrl_gpio_pins_at_index(nlab_ctrl_gpio_pins gps, int in
 /// \brief Frees the list.
 ///
 /// Calls nlab_ctrl_gpio_pin_free() on every element of the list, and in the end frees the list itself.
+///
+/// \param[in,out]  gps  The gpio pin list.
 void nlab_ctrl_gpio_pins_free(nlab_ctrl_gpio_pins gps);
 
 /// \brief Frees the nlab_ctrl_gpio_pin.
+///
+/// \param[in,out]  gp  The gpio pin struct.
 void nlab_ctrl_gpio_pin_free(nlab_ctrl_gpio_pin* gp);
 
 #ifdef __cplusplus
@@ -415,7 +430,7 @@ extern "C" {
 /// Returns a list of controllers that are found on the system.
 /// These can then be used to open a controller with nlab_ctrl_open.
 ///
-/// \return
+/// \return A list of nlab_ctrl_info structs.
 extern nlab_ctrl_info_list nlab_ctrl_list(nlab_ctrl_error* ctrl_err);
 
 /// \brief Opens a controller for interaction.

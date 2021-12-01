@@ -98,7 +98,7 @@ int main() {
         // Retrieve all its step motors.
         vector<StepMotor> stepMotors = ctrl->getStepMotors();
         cout << "found " << to_string(stepMotors.size()) << " step motor(s):" << endl;
-        for (const auto& sm : stepMotors) {
+        for (const auto sm : stepMotors) {
             cout << " - ";
             printStepMotor(sm);
             cout << endl;
@@ -112,7 +112,7 @@ int main() {
         // Retrieve all its leds.
         vector<LED> leds = ctrl->getLEDs();
         cout << "found " << to_string(leds.size()) << " led(s):" << endl;
-        for (const auto& led : leds) {
+        for (const auto led : leds) {
             cout << " - ";
             printLED(led);
             cout << endl;
@@ -126,7 +126,7 @@ int main() {
         // Retrieve all its switches.
         vector<Switch> switches = ctrl->getSwitches();
         cout << "found " << to_string(switches.size()) << " switch(es):" << endl;
-        for (const auto& sw : switches) {
+        for (const auto sw : switches) {
             cout << " - ";
             printSwitch(sw);
             cout << endl;
@@ -140,7 +140,7 @@ int main() {
         // Retrieve all its gpio pins.
         vector<GPIOPin> gpioPins = ctrl->getGPIOPins();
         cout << "found " << to_string(gpioPins.size()) << " gpioPin(s):" << endl;
-        for (const auto& gp : gpioPins) {
+        for (const auto gp : gpioPins) {
             cout << " - ";
             printGPIOPin(gp);
             cout << endl;
@@ -158,7 +158,7 @@ int main() {
         try {
             StepMotor sm = ctrl->getStepMotor("doesnotexist");
         } catch (Exception& e) {
-            if (e.code() == NotFound) {
+            if (e.code() == Exception::NotFound) {
                 cout << "correctly catched NotFound exception for non-existing step motor" << endl;
             } else {
                 // Something else happened, let it bubble up.
