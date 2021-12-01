@@ -41,7 +41,7 @@ Run the sample: `chmod +x controller-libs-sample-cpp && ./controller-libs-sample
 
 ## Documentation
 - [C API](https://docs.wahtari.io/controller-libs/libnlab-ctrl_8h.html)
-- C++ API TODO
+- [C++ API](https://docs.wahtari.io/controller-libs/libnlab-ctrl_8hpp.html)
 
 ## License
 The license for this product can be found in the `LICENSE` file.  

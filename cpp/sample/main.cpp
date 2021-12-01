@@ -85,7 +85,7 @@ int main() {
     Controller::Ptr ctrl;
     try {
         // Get a the list of available controllers.
-        // Note that dummy controllers are not part included in that.
+        // Note that dummy controllers are not included in that.
         vector<Info> infoList = Controller::list();
         cout << "found " << to_string(infoList.size()) << " real controller(s), but using dummy now" << endl;
 
