@@ -7,7 +7,7 @@ The samples are interacting with GPIO Pins. If the underlying hardware (e.g. an 
 ***Use at your own risk!***
 
 ### C
-Find the sample C application [here](c/sample/main.c).  
+Find the sample C application [here](https://github.com/wahtari/controller-libs/blob/master/c/sample/main.c).  
 You can build the sample with this command fromm the root of this repo:  
 ```bash
 gcc \
@@ -22,7 +22,7 @@ gcc \
 Run the sample: `chmod +x controller-libs-sample-c && ./controller-libs-sample-c`
 
 ### C++
-Find the sample C++ application [here](cpp/sample/main.cpp).  
+Find the sample C++ application [here](https://github.com/wahtari/controller-libs/blob/master/cpp/sample/main.cpp).  
 You can build the sample with this command fromm the root of this repo:  
 ```bash
 g++ \
